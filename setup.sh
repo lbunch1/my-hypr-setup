@@ -1,4 +1,4 @@
-#1/usr/bin/bash
+#!/usr/bin/bash
 
 sudo pacman -S archlinux-keyring
 
