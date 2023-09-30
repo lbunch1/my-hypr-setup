@@ -1,0 +1,3 @@
+timeout 300 'swaylock --image ~/.config/swaylock/sleep.png --indicator-radius 100 --indicator-thickness 7 --ring-color ffffff88 --key-hl-color ffffffdd --line-color 00000000 --inside-color 00000088 --separator-color 00000000'
+timeout 600 'systemctl suspend'
+before-sleep 'swaylock --image ~/.config/swaylock/sleep.png --indicator-radius 100 --indicator-thickness 7 --ring-color ffffff88 --key-hl-color ffffffdd --line-color 00000000 --inside-color 00000088 --separator-color 00000000'
