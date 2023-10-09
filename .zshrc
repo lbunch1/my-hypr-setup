@@ -113,7 +113,13 @@ alias vnim=florb
 alias nivm=florb
 alias niv=florb
 alias emacs=florb
+alias helix=florb
 
 alias l="eza -la"
 alias la="eza -la"
 alias ls="eza -la"
+
+alias t="tmux"
+alias ta="tmux a"
+alias tls="tmux ls"
+
