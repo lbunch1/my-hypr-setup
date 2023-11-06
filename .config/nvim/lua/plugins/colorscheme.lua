@@ -25,6 +25,15 @@ return {
     end,
   },
 
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true
+    }
+  },
+
   -- {
   --   "rktjmp/lush.nvim",
   -- },
@@ -37,7 +46,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "jellybeans",
+      colorscheme = "kanagawa",
     },
   },
 }
