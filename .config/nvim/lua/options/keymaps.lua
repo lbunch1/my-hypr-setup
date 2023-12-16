@@ -113,3 +113,6 @@ vim.keymap.set('n', 'H', '<C-w>h', { remap = true, desc = 'Move to left split' }
 vim.keymap.set('n', 'J', '<C-w>j', { remap = true, desc = 'Move to bottom split' })
 vim.keymap.set('n', 'K', '<C-w>k', { remap = true, desc = 'Move to top split' })
 vim.keymap.set('n', 'L', '<C-w>l', { remap = true, desc = 'Move to right split' })
+
+-- [[ LazyGit ]]
+vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
