@@ -1,0 +1,11 @@
+[Added Associations]
+image/png=imv-dir.desktop;imv.desktop;gimp.desktop;
+image/jpeg=chromium.desktop;gimp.desktop;
+
+[Default Applications]
+x-scheme-handler/discord-460807638964371468=discord-460807638964371468.desktop
+text/html=microsoft-edge.desktop
+x-scheme-handler/http=microsoft-edge.desktop
+x-scheme-handler/https=microsoft-edge.desktop
+x-scheme-handler/about=microsoft-edge.desktop
+x-scheme-handler/unknown=microsoft-edge.desktop

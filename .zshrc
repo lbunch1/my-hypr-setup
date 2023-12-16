@@ -123,3 +123,7 @@ alias t="tmux"
 alias ta="tmux a"
 alias tls="tmux ls"
 
+alias homevpn="sudo openvpn --config vpn/client.ovpn"
+
+export PATH="$HOME/.cargo/bin:$HOME/go/bin:$PATH"
+export HYPRSHOT_DIR="$HOME/screenshots/"

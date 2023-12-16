@@ -13,7 +13,7 @@ yay -S rustup
 
 rustup default stable
 
-yay -S blueberry blueman bluez chromium brightnessctl btop calc eza fd ffmpeg lemurs gimp github-cli go grim hyprland-git kitty kitty-shell-integration lazygit mako neovim nodejs npm pnpm polkit polkit-kde polkit-qt5 ripgrep swayidle thunar waylock wl-gammarelay-rs wofi workstyle-git wpaperd xclip xdg-desktop-portal-hyprland-git zsh waybar-hyprland-git gsettings-qt nwg-look-bin
+yay -S blueberry blueman bluez brightnessctl microsoft-edge-stable-bin btop calc eza fd ffmpeg lemurs gimp github-cli go grim hyprland-git kitty kitty-shell-integration lazygit mako neovim nodejs npm pnpm polkit polkit-kde polkit-qt5 ripgrep swayidle thunar waylock wl-gammarelay-rs wofi workstyle-git wpaperd xclip xdg-desktop-portal-hyprland-git zsh waybar-hyprland-git gsettings-qt nwg-look-bin
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

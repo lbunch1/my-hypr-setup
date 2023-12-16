@@ -1,0 +1,3 @@
+timeout 300 'waylock -init-color 0x212121 -input-color 0x444444 -fail-color 0x552121'
+timeout 600 'systemctl suspend'
+before-sleep 'waylock -init-color 0x212121 -input-color 0x444444 -fail-color 0x552121'
