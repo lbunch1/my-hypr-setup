@@ -116,3 +116,7 @@ vim.keymap.set('n', 'L', '<C-w>l', { remap = true, desc = 'Move to right split' 
 
 -- [[ LazyGit ]]
 vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
+
+-- [[ Session Management ]]
+vim.keymap.set('n', '<leader>sm', ':wall<cr>:mksession! ~/.vimsessions/')
+vim.keymap.set('n', '<leader>sr', ':wall<cr>:source ~/.vimsessions/')
