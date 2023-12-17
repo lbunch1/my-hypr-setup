@@ -119,11 +119,29 @@ alias l="eza -la"
 alias la="eza -la"
 alias ls="eza -la"
 
-alias t="tmux"
-alias ta="tmux a"
+t() {
+  if [[ -z "$1" ]]; then
+    tmux
+  else
+    tmux new-session -s "$1"
+  fi
+}
+
+ta() {
+  if [[ -z "$1" ]]; then
+    tmux attach
+  else
+    tmux attach -t "$1"
+  fi
+}
+
+alias tk="tmux kill-session -t"
+
 alias tls="tmux ls"
 
 alias homevpn="sudo openvpn --config vpn/client.ovpn"
 
 export PATH="$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 export HYPRSHOT_DIR="$HOME/screenshots/"
+
+fastfetch
