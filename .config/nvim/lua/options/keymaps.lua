@@ -22,7 +22,7 @@ local function find_git_root()
   return git_root
 end
 
-vim.keymap.set('n', '<leader>/', function()
+vim.keymap.set('n', '<leader>f', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
@@ -120,3 +120,12 @@ vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
 -- [[ Session Management ]]
 vim.keymap.set('n', '<leader>ms', ':wall<cr>:mksession! ~/.vimsessions/')
 vim.keymap.set('n', '<leader>mr', ':wall<cr>:source ~/.vimsessions/')
+
+-- [[ Close and Exit ]]
+vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>wq', ':wq<cr>')
+vim.keymap.set('n', '<leader>qq', ':q!')
+
+-- [[ Terminal ]]
+vim.keymap.set('n', '<leader>/', ':ToggleTerm<cr>')
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
