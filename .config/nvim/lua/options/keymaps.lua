@@ -123,6 +123,7 @@ vim.keymap.set('n', '<leader>mr', ':wall<cr>:source ~/.vimsessions/')
 
 -- [[ Close and Exit ]]
 vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>ww', ':wall<cr>')
 vim.keymap.set('n', '<leader>wq', ':wq<cr>')
 vim.keymap.set('n', '<leader>qq', ':q!')
 
