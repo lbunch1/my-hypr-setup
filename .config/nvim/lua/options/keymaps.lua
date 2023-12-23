@@ -154,3 +154,11 @@ vim.keymap.set('n', '<leader>7', function() harpoon:list():select(7) end)
 vim.keymap.set('n', '<leader>8', function() harpoon:list():select(8) end)
 vim.keymap.set('n', '<leader>9', function() harpoon:list():select(9) end)
 vim.keymap.set('n', '<leader>0', function() harpoon:list():select(0) end)
+
+-- [[ Trouble - error handling]]
+vim.keymap.set("n", "<leader>tt", function() require("trouble").toggle() end)
+vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
