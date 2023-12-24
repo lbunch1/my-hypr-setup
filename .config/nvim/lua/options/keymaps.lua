@@ -78,7 +78,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Netrw
 vim.keymap.set('n', '-', ':Ex<cr>', { remap = true })
@@ -86,7 +85,7 @@ vim.keymap.set('n', '-', ':Ex<cr>', { remap = true })
 -- Buffer Nav
 vim.keymap.set('n', '[b', ':bprevious<cr>', {})
 vim.keymap.set('n', ']b', ':bnext<cr>', {})
-vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', {})
+vim.keymap.set('n', '<leader>bd', ':bdelete<cr>', { desc = 'delete current buffer' })
 
 -- Spellcheck
 vim.keymap.set('n', '<leader>us', ':setlocal spell! spelllang=en_us<cr>', { desc = 'Toggle Spellcheck' })
@@ -118,47 +117,57 @@ vim.keymap.set('n', 'L', '<C-w>l', { remap = true, desc = 'Move to right split' 
 vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'LazyGit' })
 
 -- [[ Session Management ]]
-vim.keymap.set('n', '<leader>ms', ':wall<cr>:mksession! ~/.vimsessions/')
-vim.keymap.set('n', '<leader>mr', ':wall<cr>:source ~/.vimsessions/')
+vim.keymap.set('n', '<leader>ms', ':wall<cr>:mksession! ~/.vimsessions/', { desc = 'Save Session' })
+vim.keymap.set('n', '<leader>mr', ':wall<cr>:source ~/.vimsessions/', { desc = 'Restore Session' })
 
 -- [[ Close and Exit ]]
-vim.keymap.set('n', '<leader>w', ':w<cr>')
-vim.keymap.set('n', '<leader>ww', ':wall<cr>')
-vim.keymap.set('n', '<leader>wq', ':wq<cr>')
-vim.keymap.set('n', '<leader>qq', ':q!')
+vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = 'Save' })
+vim.keymap.set('n', '<leader>ww', ':wall<cr>', { desc = 'Save All' })
+vim.keymap.set('n', '<leader>wq', ':wq<cr>', { desc = 'Save and Quit' })
+vim.keymap.set('n', '<leader>qw', ':q<cr>', { desc = 'Quit buffer' })
+vim.keymap.set('n', '<leader>qqq', ':q!<cr>', { desc = 'Quit without saving' })
 
 -- [[ Terminal ]]
-vim.keymap.set('n', '<leader>/', ':ToggleTerm<cr>')
+vim.keymap.set('n', '<leader>/', ':ToggleTerm<cr>', { desc = 'Toggle Terminal' })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- [[ Harpoon ]]
 local harpoon = require('harpoon')
-vim.keymap.set('n', '<leader>b', function() harpoon:list():append() end)
-vim.keymap.set('n', '<leader>e', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', '<leader>b', function() harpoon:list():append() end, { desc = 'Add current buffer to harpoon' })
+vim.keymap.set('n', '<leader>e', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+  { desc = 'Open harpoon menu' })
 
-vim.keymap.set('n', '<leader>z', function() harpoon:list():select(1) end)
-vim.keymap.set('n', '<leader>x', function() harpoon:list():select(2) end)
-vim.keymap.set('n', '<leader>c', function() harpoon:list():select(3) end)
-vim.keymap.set('n', '<leader>v', function() harpoon:list():select(4) end)
+vim.keymap.set('n', '<leader>z', function() harpoon:list():select(1) end, { desc = 'Navigate to harpoon item 1' })
+vim.keymap.set('n', '<leader>x', function() harpoon:list():select(2) end, { desc = 'Navigate to harpoon item 2' })
+vim.keymap.set('n', '<leader>c', function() harpoon:list():select(3) end, { desc = 'Navigate to harpoon item 3' })
+vim.keymap.set('n', '<leader>v', function() harpoon:list():select(4) end, { desc = 'Navigate to harpoon item 4' })
 
-vim.keymap.set('n', '<leader>n', function() harpoon:list():next() end)
-vim.keymap.set('n', '<leader>p', function() harpoon:list():prev() end)
+vim.keymap.set('n', '<leader>n', function() harpoon:list():next() end, { desc = 'Navigate to next harpoon item' })
+vim.keymap.set('n', '<leader>p', function() harpoon:list():prev() end, { desc = 'Navigate to previous harpoon item' })
 
-vim.keymap.set('n', '<leader>1', function() harpoon:list():select(1) end)
-vim.keymap.set('n', '<leader>2', function() harpoon:list():select(2) end)
-vim.keymap.set('n', '<leader>3', function() harpoon:list():select(3) end)
-vim.keymap.set('n', '<leader>4', function() harpoon:list():select(4) end)
-vim.keymap.set('n', '<leader>5', function() harpoon:list():select(5) end)
-vim.keymap.set('n', '<leader>6', function() harpoon:list():select(6) end)
-vim.keymap.set('n', '<leader>7', function() harpoon:list():select(7) end)
-vim.keymap.set('n', '<leader>8', function() harpoon:list():select(8) end)
-vim.keymap.set('n', '<leader>9', function() harpoon:list():select(9) end)
-vim.keymap.set('n', '<leader>0', function() harpoon:list():select(0) end)
+vim.keymap.set('n', '<leader>1', function() harpoon:list():select(1) end, { desc = 'Navigate to harpoon item 1' })
+vim.keymap.set('n', '<leader>2', function() harpoon:list():select(2) end, { desc = 'Navigate to harpoon item 2' })
+vim.keymap.set('n', '<leader>3', function() harpoon:list():select(3) end, { desc = 'Navigate to harpoon item 3' })
+vim.keymap.set('n', '<leader>4', function() harpoon:list():select(4) end, { desc = 'Navigate to harpoon item 4' })
+vim.keymap.set('n', '<leader>5', function() harpoon:list():select(5) end, { desc = 'Navigate to harpoon item 5' })
+vim.keymap.set('n', '<leader>6', function() harpoon:list():select(6) end, { desc = 'Navigate to harpoon item 6' })
+vim.keymap.set('n', '<leader>7', function() harpoon:list():select(7) end, { desc = 'Navigate to harpoon item 7' })
+vim.keymap.set('n', '<leader>8', function() harpoon:list():select(8) end, { desc = 'Navigate to harpoon item 8' })
+vim.keymap.set('n', '<leader>9', function() harpoon:list():select(9) end, { desc = 'Navigate to harpoon item 9' })
+vim.keymap.set('n', '<leader>0', function() harpoon:list():select(0) end, { desc = 'Navigate to harpoon item 0' })
 
 -- [[ Trouble - error handling]]
-vim.keymap.set("n", "<leader>tt", function() require("trouble").toggle() end)
-vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end)
-vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end)
-vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end)
-vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end)
-vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+vim.keymap.set("n", "<leader>tt", function() require("trouble").toggle() end, { desc = 'Toggle Trouble' })
+vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end,
+  { desc = 'Toggle Workspace Trouble' })
+vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end,
+  { desc = 'Toggle Document Trouble' })
+vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end,
+  { desc = 'Toggle Quickfix Trouble' })
+vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end,
+  { desc = 'Toggle Loclist Trouble' })
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end,
+  { desc = 'Toggle LSP References Trouble' })
+
+-- [[ TODO.nvim ]]
+vim.keymap.set("n", "<leader>ll", ":TodoTelescope<cr>", { desc = 'Open TODO Telescope' })
